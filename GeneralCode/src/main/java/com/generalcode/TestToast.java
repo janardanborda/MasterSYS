@@ -1,4 +1,4 @@
-package com.code.generalcode;
+package com.generalcode;
 
 import android.content.Context;
 import android.widget.Toast;
