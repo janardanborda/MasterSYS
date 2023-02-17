@@ -4,9 +4,8 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
         jcenter()
-        maven {
-            url "https://maven.google.com"
-        }
+        maven { url "https://jitpack.io" }
+
     }
 }
 dependencyResolutionManagement {
@@ -15,9 +14,8 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter()
-        maven {
-            url "https://maven.google.com"
-        }
+        maven { url "https://jitpack.io" }
+
     }
 }
 rootProject.name = "AppCoding"
