@@ -40,7 +40,7 @@ android {
             mavenJava(MavenPublication) {
                 groupId = 'com.code.master'
                 artifactId = 'MasterSYS'
-                version = '1.1.8'
+                version = '1.1.0'
             }
         }
     }
@@ -59,4 +59,7 @@ dependencies {
     androidTestImplementation libs.ext.junit
     //noinspection UseTomlInstead
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+
+    implementation 'com.github.janardanborda:MasterSYS:1.1.9'
+
 }
