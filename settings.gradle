@@ -17,6 +17,6 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "AppCoding"
+rootProject.name = "MasterSYS"
 include ':app'
 include ':GeneralCode'

@@ -2,14 +2,17 @@ plugins {
     id 'com.android.library'
     id 'maven-publish'
 }
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
 
 android {
     namespace 'com.generalcode'
-    compileSdk 33
+    compileSdk 35
 
     defaultConfig {
         minSdk 24
-        targetSdk 33
+        targetSdk 35
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -25,12 +28,33 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
 
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    buildFeatures {
+        buildConfig true
+        viewBinding = true
+    }
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.6.0'
-    implementation 'com.google.android.material:material:1.8.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation libs.appcompat.v160
+    implementation libs.material.v180
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation libs.firebase.installations
+
+    testImplementation libs.junit
+    androidTestImplementation libs.junit.v115
+    androidTestImplementation libs.espresso.core
+
+    implementation libs.work.runtime.ktx
+
+    // Firebase Push Notification
+    implementation platform(libs.firebase.bom)
+    implementation libs.firebase.analytics
+    implementation libs.firebase.config
+    implementation libs.firebase.database
+    implementation libs.firebase.messaging
 }
