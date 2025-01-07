@@ -25,8 +25,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     buildFeatures {
@@ -40,7 +40,7 @@ android {
             mavenJava(MavenPublication) {
                 groupId = 'com.code.master'
                 artifactId = 'MasterSYS'
-                version = '2.0.1'
+                version = '2.0.2'
             }
         }
     }
