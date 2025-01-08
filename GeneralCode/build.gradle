@@ -38,7 +38,7 @@ dependencies {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'com.code.master'
+            groupId = 'com.github.janardanborda'
             artifactId = 'MasterSYS'
             version = '2.1.8'
         }
