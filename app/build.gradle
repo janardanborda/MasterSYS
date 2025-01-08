@@ -37,6 +37,16 @@ android {
 
 }
 
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                groupId = 'com.code.master'
+                artifactId = 'MasterSYS'
+                version = '1.1.8'
+            }
+        }
+    }
+
 dependencies {
     implementation project(path:':GeneralCode')
     implementation 'androidx.appcompat:appcompat:1.6.1'
