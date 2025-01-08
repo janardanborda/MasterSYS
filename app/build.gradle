@@ -3,6 +3,8 @@ plugins {
     id 'maven-publish'
 }
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
 
 android {
     namespace 'com.code.master'
@@ -33,6 +35,11 @@ android {
         buildConfig true
         viewBinding = true
     }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
 }
 
     publishing {
@@ -40,7 +47,7 @@ android {
             mavenJava(MavenPublication) {
                 groupId = 'com.code.master'
                 artifactId = 'MasterSYS'
-                version = '2.0.3'
+                version = '2.0.4'
             }
         }
     }
@@ -59,4 +66,7 @@ dependencies {
     androidTestImplementation libs.ext.junit
     //noinspection UseTomlInstead
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+
+    implementation libs.work.runtime.ktx
+
 }
