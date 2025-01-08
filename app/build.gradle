@@ -47,26 +47,29 @@ android {
             mavenJava(MavenPublication) {
                 groupId = 'com.code.master'
                 artifactId = 'MasterSYS'
-                version = '2.0.7'
+                version = '2.0.8'
             }
         }
     }
 
 dependencies {
     implementation project(path:':GeneralCode')
-    implementation libs.appcompat
-    implementation libs.material
-    //noinspection UseTomlInstead
+    implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
-    implementation libs.support.annotations
-    implementation libs.firebase.common
-    implementation libs.google.firebase.config
-    implementation libs.activity
-    testImplementation libs.junit
-    androidTestImplementation libs.ext.junit
-    //noinspection UseTomlInstead
+    testImplementation 'junit:junit:'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    implementation "com.airbnb.android:lottie:6.1.0"
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 
-    implementation libs.work.runtime.ktx
+    implementation 'androidx.work:work-runtime-ktx:2.10.0'
+
+    // Firebase Push Notification
+    implementation platform('com.google.firebase:firebase-bom:33.7.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-config'
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-auth'
 
 }
