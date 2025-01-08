@@ -4,7 +4,6 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
         jcenter()
-        maven { url 'https://maven.google.com' }
         maven { url 'https://jitpack.io' }
     }
 }
@@ -15,10 +14,9 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter()
-        maven { url 'https://maven.google.com' }
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "MasterSYS"
+rootProject.name = "AppCoding"
 include ':app'
 include ':GeneralCode'

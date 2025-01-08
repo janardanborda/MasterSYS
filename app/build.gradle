@@ -2,18 +2,15 @@ plugins {
     id 'com.android.application'
     id 'maven-publish'
 }
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-parcelize'
 
 android {
     namespace 'com.code.master'
-    compileSdk 35
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.code.master"
         minSdk 24
-        targetSdk 35
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -27,46 +24,27 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    buildFeatures {
-        buildConfig true
-        viewBinding = true
-    }
-
-    kotlinOptions {
-        jvmTarget = '17'
-    }
+}
 
     publishing {
-        singleVariant("release") {
-            withSourcesJar()
-            withJavadocJar()
+        publications {
+            mavenJava(MavenPublication) {
+                groupId = 'com.code.master'
+                artifactId = 'MasterSYS'
+                version = '1.1.8'
+            }
         }
     }
 
-}
-
 dependencies {
     implementation project(path:':GeneralCode')
-    implementation 'com.google.android.material:material:1.12.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
-    testImplementation 'junit:junit:'
-    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
-    implementation "com.airbnb.android:lottie:6.1.0"
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
-
-    implementation 'androidx.work:work-runtime-ktx:2.10.0'
-
-    // Firebase Push Notification
-    implementation platform('com.google.firebase:firebase-bom:33.7.0')
-    implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-config'
-    implementation 'com.google.firebase:firebase-database'
-    implementation 'com.google.firebase:firebase-messaging'
-    implementation 'com.google.firebase:firebase-auth'
-
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
