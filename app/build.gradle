@@ -65,5 +65,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database'
     implementation 'com.google.firebase:firebase-messaging'
     implementation 'com.google.firebase:firebase-auth'
+
+    implementation 'com.github.janardanborda:MasterSYS:v-2.2.3'
 }
 
