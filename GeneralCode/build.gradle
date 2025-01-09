@@ -57,7 +57,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = 'com.generalcode'
             artifactId = 'MasterSYS'
-            version = '2.2.3'
+            version = '2.2.5'
         }
     }
 }
